@@ -1,38 +1,112 @@
-.App {
+:root{
+  --color-rojo: #e63946;
+  --color-azul: #457b9d;
+  --color-amarillo: #f0d02f;
+  --color-verde: #52b788;
+}
+
+html{
+  font-size: 62,5%;
+  margin: 0 0;
+  padding: 0 0;
+  scroll-behavior:smooth;
+}
+
+body{
+  user-select: none;
+  font-family: 'Alata', sans-serif;
+  background-color: white;
+}
+
+.navbar{
+  height: 8rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--color-amarillo);
+  border-bottom: 1px solid var(--color-azul);
+}
+
+.links{
+  display: flex;
+  flex-direction: row;
+  width: 50rem;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav__link{
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: 0.25s;
+  color: black;
+  font-weight: bold;
+}
+
+.nav__link:hover{
+  color: #e63946;
+}
+
+.text__saludo{
+  margin: 0 1rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo{
+  width: 6.5rem;
+  height: 6.5rem;
+  background-color: white;
+  border: 5px solid white;
+  border-radius: 50%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.div__carrito{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: white;
+  border: 3px solid var(--color-azul);
+  border-radius: 10px;
+  margin: 0 0.25rem;
+  transition: 0.2s;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.div__carrito:hover{
+  border: 3px solid var(--color-rojo);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#carrito_cantidad{
+  font-size: 2rem;
+  margin: 0 0.5rem;
+}
+
+.titulo__ItemListContainer{
+  text-align: center;
+  font-size: 3rem;
+}
+
+.footer{
+  background-color: var(--color-azul);
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+}
+
+.footer__terminos{
+  text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+
+  .text__saludo{
+    font-size: 1.25rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .nav__link{
+    font-size: 1rem;
   }
+
 }
