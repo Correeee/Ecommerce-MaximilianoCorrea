@@ -4,15 +4,17 @@ import ItemListContainer from './components/ItemListContainer';
 import Footer from './components/Footer';
 
 function App() {
+
+  const nombre_usuario = "Maximiliano";
+  const mensaje = "LAS MEJORES OFERTAS";
+
   return (
     <>
-    <Navbar/>
+    <Navbar name={nombre_usuario}/>
     <main>
-    <ItemListContainer/>
+    <ItemListContainer greeting={mensaje}/>
     </main>
 
-
-    <Footer/>
     </>
   );
 }

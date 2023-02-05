@@ -2,9 +2,8 @@ import React from 'react';
 import logo from '.././multimedia/logo2.png'
 import CartWidget from './CartWidget';
 
-export const Navbar = ()=>{
+export const Navbar = ({name})=>{
 
-    let nombre_usuario = "Maximiliano";
 
     const categorias = [
         {id: 1, name: "Categoría 1"},
@@ -13,10 +12,10 @@ export const Navbar = ()=>{
     ]
 
     return (
-        <nav className='navbar'>
+        <header className='navbar'>
             <img src={logo} alt="logo" className='logo'/>
-            <h2 className='text__saludo'>¡Bienvenido/a {nombre_usuario}!</h2>
-            <div className='links'>
+            <h2 className='text__saludo'>¡Bienvenido/a {name}!</h2>
+            <nav className='links'>
                 <a href='' className='nav__link'>Inicio</a>
                 {
                     categorias.map((categoria) =>{
@@ -24,10 +23,10 @@ export const Navbar = ()=>{
                     })
                     
                 }
-            </div>
+            </nav>
             <CartWidget/>
 
-        </nav>
+        </header>
         
     )
 
