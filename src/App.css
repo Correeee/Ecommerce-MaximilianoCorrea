@@ -19,6 +19,9 @@ body{
   user-select: none;
   font-family: 'Alata', sans-serif;
   background-color: white;
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 2rem;
 }
 
 
@@ -50,6 +53,7 @@ body{
   color: black;
   font-weight: lighter;
   color: white;
+  margin: 0 0.25rem;
 }
 
 .nav__link:hover{
@@ -74,6 +78,25 @@ body{
   border-radius: 50%;
   box-shadow: 0px 0px 0px white;
   cursor: pointer;
+  animation: shake 1.5s;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }
 
 .div__carrito{
@@ -127,7 +150,7 @@ body{
   justify-content: space-around;
   align-items: center;
   width: 20rem;
-  min-height: 32rem;
+  min-height: 30rem;
   text-align: center;
   margin: 1rem 4rem; 
   border-radius: 10px;
@@ -141,14 +164,14 @@ body{
 }
 
 .div__producto:hover{
-  outline: 2px solid black;
+  outline: 3px solid black;
 }
 
 .producto__img{
   width: 14rem;
   height: 10rem;
   border-radius: 20px;
-  box-shadow: 0px 0px 5px var(--color-amarillo);
+box-shadow: 0px 0px 5px rgb(219 218 218);
   object-fit: contain;
   padding: 1rem;
 }
@@ -176,22 +199,9 @@ h3{
   transition: 0.25s;
 }
 
-.btn__agregar:hover{
+.btn__ver:hover{
   background-color: var(--color-azul);
 }
-
-@media screen and (max-width: 1024px) {
-
-  .text__saludo{
-    font-size: 1.25rem;
-  }
-
-  .nav__link{
-    font-size: 1rem;
-  }
-
-}
-
 
 /* ITEM DETAIL / ITEM DETAIL CONTAINER */
 
@@ -232,11 +242,12 @@ h3{
 }
 
 .itemDetail__img{
-  width: 40vw;
-  height: 40vh;
+  width: 35vw;
+  height: 35vh;
   border-radius: 20px;
   box-shadow: 0px 0px 5px rgb(219, 218, 218);
-  object-fit:scale-down;
+  object-fit:contain;
+  padding: 0.5rem;
 }
 
 .itemDetail__description{
@@ -314,4 +325,51 @@ h3{
 }
 
 
+/*FOOTER*/
 
+.footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 100vw;
+  height: 2rem;
+  background-color: var(--color-azul);
+  position: absolute;
+  bottom: 0;
+}
+
+.footer__terminos{
+  margin: 0;
+}
+
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 1024px) {
+
+  .text__saludo{
+    font-size: 1.25rem;
+  }
+
+  .nav__link{
+    font-size: 1rem;
+  }
+
+}
+
+@media screen and (max-width: 768px){
+  .text__saludo{
+    font-size: 0.8rem;
+  }
+
+  .logo{
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .links{
+    flex-wrap: wrap;
+  }
+}

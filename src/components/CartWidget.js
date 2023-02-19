@@ -5,7 +5,6 @@ export default function CartWidget() {
 
     let carrito_cantidad = 0;
 
-
     return (
         <div className='div__carrito' id='div_carrito'>
             <ShoppingCartIcon sx={{ fontSize: 50 }} />
