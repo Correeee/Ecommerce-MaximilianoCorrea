@@ -40,7 +40,7 @@ export default function Cart() {
                                 <img src={producto.url} className='img__cart'/>
                                 <p>{producto.description}</p>
                                 <h3>Cantidad: {producto.quantity}</h3>
-                                <p>{producto.price}</p>
+                                <p>$ {producto.price}</p>
                                 <button id='btn_eliminar' onClick={remove} value={producto.id}>Eliminar</button>
                                 </div>
                         }) : <h2>TU CARRITO ESTÁ VACÍO</h2>}
@@ -49,21 +49,7 @@ export default function Cart() {
                         <form action="">
                             <h2 className='pay__titles'>Total</h2>
                                 <h3 className='total' id={animation}>$ {total}</h3>
-                            <h2 className='pay__titles'>Datos</h2>
-                                    <input name='nombre' type="text" placeholder='Nombre'/>
-                                    <input name='apellido' type="text" placeholder='Apellido'/>
-                                    <input name='dirección' type="text" placeholder='Dirección'/>
-                                    <input name='teléfono' type="text" placeholder='Teléfono'/>
-                            <h2 className='pay__titles'>Método de pago</h2>
-                                    <label htmlFor="">VISA<input type="checkbox" name="visa" id=""/></label>
-                                    <label htmlFor="">MASTERCARD<input type="checkbox" name="mastercard" id=""/></label>
-                                    <label htmlFor="">MERCADO PAGO<input type="checkbox" name="mercado pago" id=""/></label>
-                            <h2 className='pay__titles'>Tarjeta</h2>
-                                <input type="number" name="numero de tarjeta" id="" maxLength={1} placeholder='Número de tarjeta'/>
-                                <input type="number" name="fecha de caducidad" id="" maxLength={1} placeholder='Fecha de caducidad'/>
-                                <input type="number" name="cvv" id="" maxLength={1} placeholder='CVV'/>
-
-                                <button type="submit">¡COMPRAR!</button>
+                                <button type="submit" className='btn__buy'>PAGAR</button>
                         </form>
                     </div>
                 </div>
