@@ -5,7 +5,7 @@ export default function Footer() {
     return (
 
     <div className='footer'>
-        <h5 className='footer__terminos'>© Maximiliano Correa. Todos los derechos reservados.</h5>
+        <h5 className='footer__terminos'><a href='https://correeee.github.io/Portfolio/' target='__blank' className='footer__link'>© Maximiliano Correa. Todos los derechos reservados.</a></h5>
     </div>
 
     )
