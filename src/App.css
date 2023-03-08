@@ -426,7 +426,8 @@ h3{
   border: 3px solid black;
   height: 44rem;
   margin-left: 1rem;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   border: 3px solid var(--color-negro);
   border-radius: 10px;
   box-shadow:

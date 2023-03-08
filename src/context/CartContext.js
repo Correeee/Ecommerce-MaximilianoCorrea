@@ -21,7 +21,6 @@ export const CartProvider = ({children}) => {
     }
   }
 
-
   const isInCart = (id) =>{
     return cart.some(producto => producto.id === id)
   }
@@ -29,12 +28,10 @@ export const CartProvider = ({children}) => {
   const removeItem = (id) =>{
     const filter = cart.filter(producto =>producto.id != id)
     setCart(filter)
-    console.log(cart)
   }
 
   const clear = () =>{
     setCart([]);
-    console.log(cart)
   }
 
   const data = {cart, addItem, removeItem, isInCart, clear}

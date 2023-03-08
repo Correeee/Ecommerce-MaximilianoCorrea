@@ -17,20 +17,16 @@ export default function Cart() {
             setAnimation('total_animation')
         }else{
             setAnimation()
-            setTotal(0)
-        }
-    
-        return () => {
-        setTotal(sumProduct)
         }
 
-    }, [cart])
+        setTotal(sumProduct)
+        console.log("SUM CART" , cart)
+        return () => {}
+    }, [cart]) //AL ELIMINAR DE A 1 LOS PRODUCTOS NO SE REDUCE EL PRECIO
     
     const remove = (e) =>{
         removeItem(e.target.value)
     }
-
-    
 
     return (
         <div>
