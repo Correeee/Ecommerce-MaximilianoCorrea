@@ -7,6 +7,7 @@ export const CartProvider = ({children}) => {
   const [cart, setCart] = useState([])
 
   console.log("CARRITO:" , cart)
+
   const addItem  = (item, quantity) =>{
 
     if(quantity > 0 && !isInCart(item.id)){
@@ -34,7 +35,8 @@ export const CartProvider = ({children}) => {
     setCart([]);
   }
 
-  const data = {cart, addItem, removeItem, isInCart, clear}
+
+  const data = {cart, addItem, removeItem, isInCart, clear} //INFO A ENVIAR A LOS HIJOS
   return (
     <CartContext.Provider value={data}>{children}</CartContext.Provider>
   )

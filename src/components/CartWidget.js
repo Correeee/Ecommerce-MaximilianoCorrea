@@ -5,8 +5,8 @@ import CartContext from '../context/CartContext';
 import { Link } from 'react-router-dom';
 
 export default function CartWidget() {
-
     const {cart} = useContext(CartContext)
+    
     const carritoCantidad = cart.length;
     const carrito = {id: 1, name: 'Carrito', route:'/cart'}
 

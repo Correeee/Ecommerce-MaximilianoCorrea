@@ -192,7 +192,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .div__producto:hover{
-  outline: 3px solid black;
+  outline: 2px solid var(--color-negro);
 }
 
 .producto__img{
@@ -202,6 +202,7 @@ body::-webkit-scrollbar-thumb {
   box-shadow: 0px 0px 5px rgb(219 218 218);
   object-fit: contain;
   padding: 1rem;
+  margin: 0 0.5rem;
 }
 
 p{
@@ -238,7 +239,7 @@ h3{
   margin: 0;
 }
 
-/* ITEM DETAIL / ITEM DETAIL CONTAINER */
+/* ITEM DETAIL / DETAIL CONTAINER */
 
 .category__title{
     text-align: center;
@@ -304,6 +305,9 @@ h3{
   background-color: var(--color-negro);
   border-radius: 5px;
   padding: 0.5rem;
+  width: 18rem;
+  height: 4rem;
+  margin: 1rem;
 }
 
 .btn__ItemQuantitySelector_number{
@@ -378,6 +382,23 @@ h3{
   cursor:auto;
 }
 
+.btn__final{
+  width: 12rem;
+  height: 3rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: var(--color-rojo);
+  border: 1px solid white;
+  border-radius: 5px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.btn__final:hover{
+  background-color: var(--color-azul);
+}
+
 /*FOOTER*/
 
 .footer{
@@ -439,6 +460,15 @@ h3{
   123px 132px 185px rgba(0, 0, 0, 0.17);  
 }
 
+#empty_cart{
+  justify-content: center;
+}
+
+.cart__msg{
+  text-align: center;
+  padding: 0 0.25rem;
+}
+
 .btn__vaciar{
   position: absolute;
   text-align: center;
@@ -468,7 +498,7 @@ h3{
   justify-content: space-around;
   align-items: center;
   width: 80%;
-  min-height: 18rem;
+  min-height: 19rem;
   margin: 1rem;
   padding: 0.25rem 0;
   border: 3px solid var(--color-negro);
@@ -486,7 +516,7 @@ h3{
   background-color: var(--color-rojo);
   color: white;
   font-weight: bold;
-  height: 2rem;
+  min-height: 2rem;
   border: none;
   border-radius: 5px;
   text-align: center;
@@ -588,11 +618,16 @@ form{
   background-color: var(--color-azul);
 }
 
+#disabled{
+  opacity: 20%;
+  cursor: auto;
+  background-color: var(--color-rojo);
+}
+
 
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 1024px) {
-
   .text__saludo{
     font-size: 1.25rem;
   }
@@ -626,5 +661,25 @@ form{
   .cart__div, .cart__pay{
     width: 80%;
     margin: 1rem 0;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .carrito{
+    flex-direction: column;
+  }
+
+  .total{
+    width: 70%;
+    font-size: 2rem;
+  }
+  .cart__item_description{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .text__saludo{
+    display: none;
   }
 }
