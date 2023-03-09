@@ -23,7 +23,7 @@ export default function ItemDetail({product}) {
 
   const agregarAlCarrito = (e) =>{
     setAddedCart(true)
-    console.log(addedCart)
+    // console.log(addedCart)
     if(contador > 0){
       addItem(product, contador)
       console.log(cart)

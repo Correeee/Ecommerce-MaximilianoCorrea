@@ -27,8 +27,8 @@ export default function Cart() {
             emptyCartDisabled('empty_cart')
         }
 
-        setTotal(sumProduct.toFixed(2))
-        console.log("SUM CART" , cart)
+        setTotal(sumProduct)
+        // console.log("SUM CART" , cart)
     }, [cart]) //AL ELIMINAR DE A 1 LOS PRODUCTOS NO SE REDUCE EL PRECIO
     
     const remove = (e) =>{

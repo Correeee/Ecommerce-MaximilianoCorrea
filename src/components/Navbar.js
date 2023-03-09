@@ -4,7 +4,6 @@ import CartWidget from './CartWidget';
 import { Link, NavLink } from 'react-router-dom'
 
 export const Navbar = ({name})=>{
-
     const categorias = [
         {id: 1, name: 'Consolas', route:'/Categorias/Consolas'},
         {id: 2, name: 'Videojuegos', route:'/Categorias/Videojuegos'},

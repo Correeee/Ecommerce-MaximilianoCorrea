@@ -135,6 +135,7 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
   text-decoration: none;
   color: var(--color-negro);
+  width: 6rem;
 }
 
 #carrito_lleno{
@@ -146,6 +147,7 @@ body::-webkit-scrollbar-thumb {
 #carrito_cantidad{
   font-size: 2rem;
   margin: 0 0.5rem;
+  display: none;
 }
 
 /* MAIN */

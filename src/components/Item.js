@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 
 export default function Item({product}) {
     const {idProduct} = useParams()
-    console.log(idProduct)
+    // console.log(idProduct)
 
     return (
         <div key={product.id} className='div__producto'>

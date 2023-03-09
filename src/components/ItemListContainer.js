@@ -41,12 +41,12 @@ export default function Item({greeting}) {
     const [products, setProducts] = useState([])
 
     const {nameCategory} = useParams()
-    console.log("nameCategory:" , nameCategory)
+    // console.log("nameCategory:" , nameCategory)
 
     useEffect(()=>{
         queryProducts
             .then((data) =>{
-                console.log("DATA" , data);
+                // console.log("DATA" , data);
                 if(nameCategory !== undefined){
                     data = data.filter(producto => producto.category === nameCategory)
                 }
