@@ -1,12 +1,21 @@
 import React from 'react'
-import { createContext, useState } from 'react'
+import { createContext, useState, useEffect } from 'react'
 
 const CartContext = createContext()
 
 export const CartProvider = ({children}) => {
   const [cart, setCart] = useState([])
+  const [total, setTotal] = useState(0)
+  console.log("TOTAL:" , total)
 
-  // console.log("CARRITO:" , cart)
+  useEffect(() => {
+    const sumProduct = cart.map(producto => producto.quantity * producto.price)
+        .reduce((a , b) => {return a + b}, 0)
+
+        setTotal(sumProduct)
+
+  }, [cart])
+  
 
   const addItem  = (item, quantity) =>{
 
@@ -27,7 +36,7 @@ export const CartProvider = ({children}) => {
   }
 
   const removeItem = (id) =>{
-    const filter = cart.filter(producto =>producto.id != id)
+    const filter = cart.filter(producto =>producto.id !== id)
     setCart(filter)
   }
 
@@ -36,7 +45,7 @@ export const CartProvider = ({children}) => {
   }
 
 
-  const data = {cart, addItem, removeItem, isInCart, clear} //INFO A ENVIAR A LOS HIJOS
+  const data = {cart, addItem, removeItem, isInCart, clear, total} //INFO A ENVIAR A LOS HIJOS
   return (
     <CartContext.Provider value={data}>{children}</CartContext.Provider>
   )

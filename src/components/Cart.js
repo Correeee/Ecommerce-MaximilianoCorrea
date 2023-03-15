@@ -17,18 +17,18 @@ export default function Cart() {
         const sumProduct = cart.map(producto => producto.quantity * producto.price)
         .reduce((a , b) => {return a + b}, 0)
 
-        if(cart.length != 0){
-            setAnimation('total_animation')
-            setDisabled(false)
-        }else{
-            setAnimation()
-            setDisabled(true)
-            setOpacity('disabled')
-            emptyCartDisabled('empty_cart')
-        }
+            if(cart.length !== 0){
+                setAnimation('total_animation')
+                setDisabled(false)
+            }else{
+                setAnimation()
+                setDisabled(true)
+                setOpacity('disabled')
+                emptyCartDisabled('empty_cart')
+            }
 
-        setTotal(sumProduct)
-        // console.log("SUM CART" , cart)
+        setTotal(sumProduct.toFixed(3))
+        console.log("SUM CART" , sumProduct)
     }, [cart]) //AL ELIMINAR DE A 1 LOS PRODUCTOS NO SE REDUCE EL PRECIO
     
     const remove = (e) =>{
@@ -44,7 +44,7 @@ export default function Cart() {
                         {cart.length > 0 ? cart.map(producto =>{
                             return <div className='cart__div_product'>
                                 <h3>{producto.name}</h3>
-                                <img src={producto.url} className='img__cart'/>
+                                <img src={producto.url} className='img__cart' alt='cart'/>
                                 <p className='cart__item_description'>{producto.description}</p>
                                 <h3>Cantidad: {producto.quantity}</h3>
                                 <p>$ {producto.price}</p>
@@ -58,11 +58,11 @@ export default function Cart() {
                         </>}
                     </div>
                     <div className='cart__pay'>
-                        <form action="">
                             <h2 className='pay__titles'>Total</h2>
-                                <h3 className='total' id={animation}>$ {total}</h3>
-                                <button type="submit" className='btn__buy' disabled={disabled} id={opacity}>PAGAR</button>
-                        </form>
+                                <h3 className='total' id={animation}>${total}</h3>
+                                <Link to={'/finalizarCompra'}>
+                                <button type="submit" className='btn__buy' disabled={disabled} id={opacity}>FINALIZAR COMPRA</button>
+                                </Link>
                     </div>
                 </div>
 

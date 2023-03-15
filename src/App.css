@@ -20,7 +20,7 @@ body{
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background-color: white;
   position: relative;
-  min-height: 100vh;
+  min-height: 96.6vh;
   padding-bottom: 2rem;
 }
 
@@ -307,15 +307,17 @@ h3{
   background-color: var(--color-negro);
   border-radius: 5px;
   padding: 0.5rem;
-  width: 18rem;
+  width: 20rem;
   height: 4rem;
   margin: 1rem;
 }
 
 .btn__ItemQuantitySelector_number{
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: white;
   font-weight: bold;
+  width: 2.5rem;
+  text-align: center;
 }
 
 .btns__ItemQuantitySelector{
@@ -404,6 +406,7 @@ h3{
 /*FOOTER*/
 
 .footer{
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -411,7 +414,6 @@ h3{
   width: 100%;
   height: 2rem;
   background-color: var(--color-azul);
-  position: absolute;
   bottom: 0;
 }
 
@@ -448,7 +450,6 @@ h3{
   width: 40%;
   border: 3px solid black;
   height: 44rem;
-  margin-left: 1rem;
   overflow-y: auto;
   overflow-x: hidden;
   border: 3px solid var(--color-negro);
@@ -565,6 +566,10 @@ h3{
   animation: tilt-shaking 2s infinite;
 }
 
+.stock{
+  margin: 0;
+}
+
 @keyframes tilt-shaking {
   0% { transform: rotate(0deg);  color: var(--color-amarillo);}
   25% { transform: rotate(5deg);}
@@ -587,6 +592,7 @@ form{
 }
 
 .pay__titles{
+  margin: 2rem;
   font-size: 4rem;
 }
 
@@ -597,15 +603,14 @@ form{
   align-items: center;
   width: 14rem;
   height: 5rem;
-  margin: 1rem 0;
+  margin: 1rem 0 5rem 0;
   font-size: 2.5rem;
 }
 
 .btn__buy{
-  width: 8rem;
+  width: 12rem;
   height: 3rem;
   text-align: center;
-  margin: 2rem 0;
   font-size: large;
   font-weight: bold;
   color: white;
@@ -624,8 +629,97 @@ form{
   opacity: 20%;
   cursor: auto;
   background-color: var(--color-rojo);
+  cursor: default;
 }
 
+/* FORM SELL */
+
+
+#form__sell{
+border: none;
+display: flex;
+flex-direction: column;
+align-items: center;
+margin: 0;
+width: 100%;
+}
+
+.form__title{
+  font-size: 3rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.input__form_sell{
+  text-align: center;
+  margin: 0.5rem 0;
+  width: 15rem;
+  height: 1.5rem;
+  font-size: 1rem;
+}
+
+.input__form_sell:focus{
+  border: 2px solid var(--color-celeste);
+  border-radius: 5px;
+  outline: none;
+}
+
+.form__div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.form_btn_comprar{
+  width: 12rem;
+  height: 3rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: var(--color-rojo);
+  border: 1px solid white;
+  border-radius: 5px;
+  transition: 0.2s;
+  cursor: pointer;
+  margin: 1rem;
+}
+
+.form_btn_comprar:hover{
+  background-color: var(--color-azul);
+}
+
+.form__total{
+  color: white;
+  margin-bottom: 1rem;
+  border: 3px solid var(--color-negro);
+  background-color: var(--color-negro);
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.form__error{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70vh;
+  text-align: center;
+}
+
+.form__error_text{
+  padding: 0 1rem;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] { -moz-appearance:textfield; }
 
 /* MEDIA QUERIES */
 
@@ -677,6 +771,14 @@ form{
   }
   .cart__item_description{
     display: none;
+  }
+
+  .itemDetail__title{
+    font-size: 2rem;
+  }
+
+  .div__carrito{
+    width: 3.5rem;
   }
 }
 

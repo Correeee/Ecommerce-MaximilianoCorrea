@@ -7,7 +7,7 @@ import { Routes, Route } from 'react-router-dom';
 import Footer from './components/Footer';
 import { CartProvider } from './context/CartContext';
 import Cart from './components/Cart';
-
+import Form from './components/Form';
 
 function App() {
 
@@ -24,6 +24,7 @@ function App() {
           <Route path='/categorias/:nameCategory' element={<ItemListContainer greeting={mensaje}/>}/> //CATEGORIAS
           <Route path='/producto/:idProduct' element={<ItemDetailContainer/>}/> //CATEGORIAS
           <Route path='/cart' element={<Cart/>}/> //CARRITO
+          <Route path='/finalizarCompra' element={<Form/>}/> //FORM
         </Routes>
       </CartProvider>
     </BrowserRouter>
