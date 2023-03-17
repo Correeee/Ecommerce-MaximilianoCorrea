@@ -6,7 +6,7 @@ const CartContext = createContext()
 export const CartProvider = ({children}) => {
   const [cart, setCart] = useState([])
   const [total, setTotal] = useState(0)
-  console.log("TOTAL:" , total)
+  const [idBuy, setidBuy] = useState()
 
   useEffect(() => {
     const sumProduct = cart.map(producto => producto.quantity * producto.price)
@@ -44,8 +44,7 @@ export const CartProvider = ({children}) => {
     setCart([]);
   }
 
-
-  const data = {cart, addItem, removeItem, isInCart, clear, total} //INFO A ENVIAR A LOS HIJOS
+  const data = {cart, setCart, addItem, removeItem, isInCart, clear, total, idBuy, setidBuy} //INFO A ENVIAR A LOS HIJOS
   return (
     <CartContext.Provider value={data}>{children}</CartContext.Provider>
   )

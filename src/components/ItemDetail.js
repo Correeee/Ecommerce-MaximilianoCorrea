@@ -25,7 +25,6 @@ export default function ItemDetail({product , stock}) {
 
     if(contador > 0 && contador <= stock){
       addItem(product, contador)
-      console.log(cart)
     }
 
   }
@@ -37,7 +36,7 @@ export default function ItemDetail({product , stock}) {
               <img src={product.url} alt={product.name} className='itemDetail__img'/>
               <p className='itemDetail__description'>{product.description}</p>
               <h4 className='itemDetail__price'>$ {product.price}</h4>
-              <h4 className='stock'>Stock: {stock}</h4>
+              <h4 className='stock'>Stock: {stock > 0 ? stock : 'No hay más stock'}</h4>
               <div className='div__btn_ItemQuantitySelector'>
                 {!addedCart ?                 
                       <>

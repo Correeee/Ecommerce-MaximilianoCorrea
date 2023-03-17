@@ -11,7 +11,6 @@ export default function Item({greeting}) {
     const {nameCategory} = useParams()
 
     useEffect(()=>{
-        console.log("nameCategory:" , nameCategory)
 
         const productsCollection = collection(db, 'products')
         const qCategory = nameCategory ? query(productsCollection, where('category', '==', nameCategory)) : productsCollection;

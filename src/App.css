@@ -699,7 +699,7 @@ width: 100%;
   padding: 0.5rem;
 }
 
-.form__error{
+.form__msg{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -720,6 +720,125 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 input[type=number] { -moz-appearance:textfield; }
+
+.form__msg_link{
+  margin: 1rem 0;
+  font-size: 1rem;
+}
+
+.form__msg_idbuy{
+  margin: 1rem 0;
+  color: var(--color-rojo);
+  font-size: 2rem;
+  user-select: text;
+}
+
+/*Busqueda*/
+
+.buscarCompra__title{
+  font-size: 2.5rem;
+  margin: 1.2rem 0 ;
+}
+
+.compra__noencontrada{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 25rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.compra__noencontrada_text{
+  font-size: 2rem;
+}
+
+.buscarCompra{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.buscarCompra__form{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: none;
+  flex-wrap: wrap;
+}
+
+#input_buscador{
+  width: 15rem;
+  height: 2.5rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+#btn_buscador{
+  height: 2.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 1rem;
+  color: white;
+  background-color: var(--color-rojo);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+#btn_buscador:hover{
+  background-color: var(--color-azul);
+}
+
+.comprobante__div_producto{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border: 3px solid var(--color-negro);
+  border-radius: 10px;
+  width: 25rem;
+  min-width: 15rem;
+  padding: 0.25rem;
+  margin: 1rem;
+}
+
+.comprobante__div_datos{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: 30rem;
+  height: 7rem;
+  padding: 1rem;
+}
+
+.comprobante__img{
+  width: 10rem;
+  height: 10rem;
+  object-fit: contain;
+  border: none;
+  padding: 0.25rem;
+}
+
+.div__producto_busqueda{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.busqueda__total{
+  font-size: 2.5rem;
+  background-color: var(--color-negro);
+  color: white;
+  padding: 0 1rem;
+}
 
 /* MEDIA QUERIES */
 
@@ -779,6 +898,14 @@ input[type=number] { -moz-appearance:textfield; }
 
   .div__carrito{
     width: 3.5rem;
+  }
+  .comprobante__div_producto{
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .comprobante__div_datos{
+    justify-content: center;
   }
 }
 

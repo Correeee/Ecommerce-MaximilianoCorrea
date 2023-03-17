@@ -8,6 +8,7 @@ export const Navbar = ({name})=>{
         {id: 1, name: 'Consolas', route:'/Categorias/Consolas'},
         {id: 2, name: 'Videojuegos', route:'/Categorias/Videojuegos'},
         {id: 3, name: 'Accesorios', route:'/Categorias/Accesorios'},
+        {id: 4, name: 'ID', route:'/BuscarCompra'},
     ]
 
     return (

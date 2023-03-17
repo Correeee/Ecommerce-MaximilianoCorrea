@@ -3,7 +3,6 @@ import { useContext, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import CartContext from '../context/CartContext'
 
-
 export default function Cart() {
     const {cart, removeItem, clear} = useContext(CartContext)
 
@@ -26,9 +25,7 @@ export default function Cart() {
                 setOpacity('disabled')
                 emptyCartDisabled('empty_cart')
             }
-
         setTotal(sumProduct.toFixed(3))
-        console.log("SUM CART" , sumProduct)
     }, [cart]) //AL ELIMINAR DE A 1 LOS PRODUCTOS NO SE REDUCE EL PRECIO
     
     const remove = (e) =>{

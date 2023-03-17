@@ -23,11 +23,10 @@ export default function ItemDetailContainer({cart}) {
         ...data.data()
       }
       setProducts(productSelection)
-      console.log(productSelection)
     })
+    
 }, [])
 
-// console.log("PRODUCTOS" , products)
   return (
     <div className='ItemDetailContainer'>
       <h3 className='category__title'>{products.category}</h3>
