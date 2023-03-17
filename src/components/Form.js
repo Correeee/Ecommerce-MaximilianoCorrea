@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom'
 import CartContext from '../context/CartContext'
 import { collection, addDoc, serverTimestamp, doc, updateDoc, getDoc } from 'firebase/firestore'
 import { db } from '../firebase/firebase'
+import { toast, Toaster } from 'react-hot-toast'
+import errorNotificationSound from '../multimedia/notification.wav'
+import sucessNotificationSound from '../multimedia/sucess.wav'
 
 export default function Form() {
     const {cart, setCart, total, idBuy, setidBuy} = useContext(CartContext)
@@ -15,8 +18,8 @@ export default function Form() {
     const [numeroTarjeta, setnumeroTarjeta] = useState()
     const [fechaExpiracion, setfechaExpiracion] = useState()
     const [cvv, setCVV] = useState()
-
-    const [stockDisponible, setstockDisponible] = useState(true)
+    const errorNotification = new Audio(errorNotificationSound)
+    const sucessNotification = new Audio(sucessNotificationSound)
 
     const getName = (e) =>{
         setNombre(e.target.value)
@@ -86,12 +89,27 @@ export default function Form() {
                                     updateDoc(docReference, {stock: producto.stock - producto.quantity})
                                 })  
                                 setidBuy(data.id);
+                                sucessNotification.play()
                                 setCart([])
                             })
                             .catch(error => console.log(error))  
                     }
                     else{
-                        alert('Algunos de los productos en tu carrito se quedaron sin stock.')
+                        errorNotification.play()
+                        toast.error('Algunos de los productos en tu carrito se quedaron sin stock. \n Se recargará la página.', {
+                            position:'top-center',
+                            duration: 6000,
+                            style:{
+                                color:'var(--color-rojo)',
+                                fontWeight:'bold',
+                                maxWidth:'35rem',
+                                textAlign:'center',
+                                fontSize:'1rem'
+                            }
+                        })
+                        setInterval(() => {
+                            window.location.reload()
+                        }, 6000);
                     }
             })
         })
@@ -100,7 +118,7 @@ export default function Form() {
 
     return (        
     <>
-        {cart.length > 0 && stockDisponible == true ? 
+        {cart.length > 0 ? 
         <form action="" id='form__sell' onSubmit={handlerBuy}>
         <div className='form__div'>
             <h2 className='form__title'>Datos personales</h2>
@@ -118,10 +136,11 @@ export default function Form() {
             <input type="text" placeholder='CVV' id='card_CVV' className='input__form_sell' onBlur={getCardCVV} required  minLength={'3'} maxLength={'3'}/>
             <button className='form_btn_comprar'>COMPRAR</button>
         </div>
+        <Toaster/>
     </form> 
     : 
     <div className='form__msg'>
-        {idBuy == undefined ?
+        {idBuy === undefined ?
         <>
             <h2 className='form__error_text'>No tienes ningún producto agregado al carrito.</h2>
             <Link to={'/'} className='form__msg_link'>Ver productos</Link>

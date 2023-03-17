@@ -9,7 +9,7 @@ export default function Item({product}) {
             <p className='producto__description'>{product.description}</p>
             <h4 className='producto__stock'>Stock: {product.stock}</h4>
             <h3 className='producto__price'>$ {product.price}</h3>
-            <Link to={`/producto/${product.id}`}><button className='btn__ver'>VER DESCRIPCIÓN</button></Link>
+            <Link to={`/producto/${product.id}`}><button className='btn__ver'>COMPRAR</button></Link>
         </div>
     )
 }

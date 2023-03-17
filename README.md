@@ -16,6 +16,7 @@
 3. Firebase (Firestore)
 4. HTML, CSS y Javascript
 4. MUI (icon material)
+5. React Hot Toast (Notificaciones)
 
 ## Repositorio
 

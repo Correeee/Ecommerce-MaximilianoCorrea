@@ -5,7 +5,6 @@ import CartContext from '../context/CartContext'
 
 export default function Cart() {
     const {cart, removeItem, clear} = useContext(CartContext)
-
     const [total, setTotal] = useState(0)
     const [animation, setAnimation] = useState()
     const [opacity, setOpacity] = useState()
