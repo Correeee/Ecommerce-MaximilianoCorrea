@@ -1,8 +1,8 @@
 import React from 'react'
-import { useState, useContext} from 'react'
+import { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import CartContext from '../context/CartContext'
-import { collection, addDoc, serverTimestamp, doc, updateDoc } from 'firebase/firestore'
+import { collection, addDoc, serverTimestamp, doc, updateDoc, getDoc } from 'firebase/firestore'
 import { db } from '../firebase/firebase'
 
 export default function Form() {
@@ -15,6 +15,8 @@ export default function Form() {
     const [numeroTarjeta, setnumeroTarjeta] = useState()
     const [fechaExpiracion, setfechaExpiracion] = useState()
     const [cvv, setCVV] = useState()
+
+    const [stockDisponible, setstockDisponible] = useState(true)
 
     const getName = (e) =>{
         setNombre(e.target.value)
@@ -60,28 +62,45 @@ export default function Form() {
     const handlerBuy = (e) =>{
         e.preventDefault()
 
-        const sellCollection = collection(db, 'sells');
-        addDoc(sellCollection, 
-                {
-                buyer,
-                productos: cart,
-                total,
-                hora: serverTimestamp(),
+        const productsCollection = collection(db, 'products');
+        cart.forEach(producto =>{
+            const productoCartID = producto.id;
+            const refDoc = doc(productsCollection, productoCartID)
+            const productoCartQuantity = producto.quantity
+            getDoc(refDoc).then(data=> {
+                const productoAPIStock = data.data().stock
+
+                    if(productoAPIStock >= productoCartQuantity){
+                        const sellCollection = collection(db, 'sells');
+                        addDoc(sellCollection, 
+                                {
+                                buyer,
+                                productos: cart,
+                                total,
+                                hora: serverTimestamp(),
+                            })
+                            .then(data => {
+                
+                                cart.forEach(producto =>{
+                                    const docReference = doc(db, 'products', producto.id);
+                                    updateDoc(docReference, {stock: producto.stock - producto.quantity})
+                                })  
+                                setidBuy(data.id);
+                                setCart([])
+                            })
+                            .catch(error => console.log(error))  
+                    }
+                    else{
+                        alert('Algunos de los productos en tu carrito se quedaron sin stock.')
+                    }
             })
-            .then(data => {
-                cart.forEach(producto =>{
-                    const docReference = doc(db, 'products', producto.id);
-                    updateDoc(docReference, {stock: producto.stock - producto.quantity})
-                })  
-                setidBuy(data.id);
-                setCart([])
-            })
-            .catch(error => console.log(error))  
+        })
     }
+
 
     return (        
     <>
-        {cart.length > 0 ? 
+        {cart.length > 0 && stockDisponible == true ? 
         <form action="" id='form__sell' onSubmit={handlerBuy}>
         <div className='form__div'>
             <h2 className='form__title'>Datos personales</h2>

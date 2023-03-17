@@ -44,6 +44,7 @@ export default function Cart() {
                                 <img src={producto.url} className='img__cart' alt='cart'/>
                                 <p className='cart__item_description'>{producto.description}</p>
                                 <h3>Cantidad: {producto.quantity}</h3>
+                                <h4 className='producto__stock'>Stock: {producto.stock}</h4>
                                 <p>$ {producto.price}</p>
                                 <button id='btn_eliminar' onClick={remove} value={producto.id}>Eliminar</button>
                                 </div>

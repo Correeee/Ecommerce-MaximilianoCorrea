@@ -205,6 +205,7 @@ body::-webkit-scrollbar-thumb {
   object-fit: contain;
   padding: 1rem;
   margin: 0 0.5rem;
+  background-color: white;
 }
 
 p{
@@ -238,6 +239,11 @@ h3{
 }
 
 .producto__title{
+  margin: 0;
+}
+
+.producto__stock{
+  color: var(--color-rojo);
   margin: 0;
 }
 
