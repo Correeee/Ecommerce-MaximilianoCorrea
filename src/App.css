@@ -891,6 +891,10 @@ input[type=number] { -moz-appearance:textfield; }
     width: 80%;
     margin: 1rem 0;
   }
+
+  .category__title{
+    font-size: 2rem;
+  }
 }
 
 @media screen and (max-width: 425px) {
@@ -921,13 +925,21 @@ input[type=number] { -moz-appearance:textfield; }
   .comprobante__div_datos{
     justify-content: center;
   }
- 
+
   .greeting{
     font-size: 1.8rem;
   }
 
   .buscarCompra__title, .compra__noencontrada_text{
     font-size: 1.5rem;
+  }
+
+  .category__title{
+    font-size: 1.8rem;
+  }
+
+  .cart__msg{
+    font-size: 1.2rem;
   }
 }
 
@@ -938,5 +950,11 @@ input[type=number] { -moz-appearance:textfield; }
 
   .greeting{
     font-size: 1.5rem;
+  }
+  .category__title{
+    font-size: 1.5rem;
+  }
+  .cart__msg{
+    font-size: 1rem;
   }
 }

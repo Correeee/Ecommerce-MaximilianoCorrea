@@ -33,7 +33,7 @@ export default function Cart() {
 
     return (
         <div>
-            <h3 className='category__title'>Finalizá tu compra</h3>
+            <h3 className='category__title'>FINALIZÁ TU COMPRA</h3>
                 <div className='cart__alldiv'>
                     <div className='cart__div' id={emptyCart}>
                         <button className='btn__vaciar' alt='Vaciar Carrito' onClick={clear}>VACIAR CARRITO</button>
