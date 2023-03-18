@@ -921,7 +921,7 @@ input[type=number] { -moz-appearance:textfield; }
   .comprobante__div_datos{
     justify-content: center;
   }
-
+ 
   .greeting{
     font-size: 1.8rem;
   }
