@@ -43,7 +43,7 @@ export default function BuscarCompra() {
             <input type="text" name="" id="input_buscador" placeholder='ID DE COMPRA' value={input} onChange={handlerInput}/>
             <button onClick={handlerClick} id='btn_buscador'>BUSCAR</button>
         </form>
-        {listBuyers === '' ? <div className='compra__noencontrada'><h2 className='compra__noencontrada_text'>COMPRA NO ENCONTRADA</h2></div>
+        {listBuyers == '' ? <div className='compra__noencontrada'><h2 className='compra__noencontrada_text'>COMPRA NO ENCONTRADA</h2></div>
         : 
         <>
         <h2>COMPROBANTE DE COMPRA</h2>
