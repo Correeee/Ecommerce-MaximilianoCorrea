@@ -140,7 +140,7 @@ export default function Form() {
     </form> 
     : 
     <div className='form__msg'>
-        {idBuy == undefined ?
+        {idBuy === undefined ?
         <>
             <h2 className='form__error_text'>No tienes ningún producto agregado al carrito.</h2>
             <Link to={'/'} className='form__msg_link'>Ver productos</Link>
