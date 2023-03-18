@@ -863,6 +863,11 @@ input[type=number] { -moz-appearance:textfield; }
 }
 
 @media screen and (max-width: 768px){
+
+  .greeting{
+    font-size: 2.2rem;
+  }
+
   .text__saludo{
     font-size: 0.8rem;
   }
@@ -916,10 +921,22 @@ input[type=number] { -moz-appearance:textfield; }
   .comprobante__div_datos{
     justify-content: center;
   }
+
+  .greeting{
+    font-size: 1.8rem;
+  }
+
+  .buscarCompra__title, .compra__noencontrada_text{
+    font-size: 1.5rem;
+  }
 }
 
 @media screen and (max-width: 375px) {
   .text__saludo{
     display: none;
+  }
+
+  .greeting{
+    font-size: 1.5rem;
   }
 }
